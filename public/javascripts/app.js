@@ -27,8 +27,7 @@ angular.module('Shopping',[])
       };
       $scope.select = function(product) {
 	product.select = true;
-	$scope.$apply();
-      }
+      };
       $scope.purchase = function() {
 	for(i = 0; i < $scope.products.length; i++) {
 	  if($scope.products[i].selected == true) {
@@ -36,7 +35,7 @@ angular.module('Shopping',[])
 	    $scope.products[i].selected = false;
 	  }
 	}
-      }
+      };
       $scope.getAll(); //create initial list 
       $scope.order = function(product) {
         return $http.put('/products/' + product._id + '/order').success(function(data){
