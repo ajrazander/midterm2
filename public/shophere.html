@@ -15,7 +15,7 @@
     </div>
     <div ng-repeat="product in products | orderBy: ['name']">
       <input type="checkbox" ng-model="product.selected" ng-change="updateSelection()"> 
-        {{product.name}} - price ${{product.price}} status:{{product.selected}}
+        {{product.name}} - price ${{product.price}}
 	<img ng-src="{{product.url}}"/>
     </div>
     <form> 
