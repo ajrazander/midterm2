@@ -25,9 +25,6 @@ angular.module('Shopping',[])
           angular.copy(data, $scope.products);
         });
       };
-      $scope.select = function(product) {
-	product.select = true;
-      };
       $scope.purchase = function() {
 	for(i = 0; i < $scope.products.length; i++) {
 	  if($scope.products[i].selected == true) {
