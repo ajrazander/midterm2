@@ -20,6 +20,9 @@ angular.module('Shopping',[])
         });
         $scope.formContent = '';
       };
+      $scope.updateSelection = function() {
+	$scope.$apply();
+      }
       $scope.getAll = function() {
         return $http.get('/products').success(function(data){
           angular.copy(data, $scope.products);
