@@ -14,7 +14,7 @@
       <h1>Newest Products!</h1><br>
     </div>
     <div ng-repeat="product in products | orderBy: ['name']">
-      <input type="checkbox" ng-model="product.selected"> 
+      <input type="checkbox" ng-model="product.selected" ng-model="checked"> 
         {{product.name}} - price ${{product.price}} status:{{product.selected}}
 	<img ng-src="{{product.url}}"/>
     </div>
@@ -23,11 +23,12 @@
     </form>
     <div id="shopping-cart">
       <h1>Shopping Cart</h1>
+      <div ng-if="checked">
       <div ng-repeat="product in products | filer:{selected:'true'}">
 	{{product.name}} - price ${{product.price}}
 	<img ng-src="{{product.url}}"/>
       </div>	  
-      <h1>End of Cart</h1>
+      </div>
     </div>
   </div>
   </div>
